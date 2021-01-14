@@ -35,7 +35,7 @@ public class HelloWorldController {
         var params = new HashMap<String, Object>();
         params.put("date_time", date_time);
         ModelAndView mav = new ModelAndView("result");//comment
-        mav.addObject("siteName", "Different site");
+        mav.addObject("date_time", date_time);
         return mav;
        // return new ModelAndView("showMessage", params);
     }
