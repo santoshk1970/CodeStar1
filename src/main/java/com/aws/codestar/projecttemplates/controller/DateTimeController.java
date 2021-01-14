@@ -29,8 +29,10 @@ public class DateTimeController {
 
         var params = new HashMap<String, Object>();
         params.put("date_time", date_time);
-
-        return new ModelAndView("showMessage", params);
+        ModelAndView mav = new ModelAndView("index");//comment
+        mav.addObject("siteName", "Different site");
+        return mav;
+       // return new ModelAndView("showMessage", params);
     }
    
 
