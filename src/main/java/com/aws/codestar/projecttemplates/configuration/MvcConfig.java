@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 
 /**
  * Spring configuration for MVC resolvers.
+ * 
  */
 @EnableWebMvc
 @Configuration
