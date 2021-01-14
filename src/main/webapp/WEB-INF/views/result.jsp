@@ -46,11 +46,11 @@
           </a>
         <div class="text">
           <h1>Congratulations!</h1>
-          <h2>You just updated again a Java Spring web application.</h2>
+          <h2>Your link just worked.</h2>
         </div>
       </div>
       <div class="message">
-      <a class="link" href="getDateTime">Get date and time</a>
+      <a class="link" href="">go back</a>
       </div>
     </div>
 
