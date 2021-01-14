@@ -49,6 +49,9 @@
           <h2>You just updated a Java Spring web application.</h2>
         </div>
       </div>
+      <div class="message">
+      <a class="link" href="getDateAndTime">Get date and time</a>
+      </div>
     </div>
 
     <footer>
