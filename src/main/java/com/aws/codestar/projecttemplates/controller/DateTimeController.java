@@ -12,7 +12,7 @@ import java.util.HashMap;
  * Basic Spring MVC controller that handles all GET requests.
  */
 @Controller
-@RequestMapping("/getDateTime")
+
 public class DateTimeController {
 
     private final String siteName;
@@ -20,8 +20,8 @@ public class DateTimeController {
     public DateTimeController(final String siteName) {
         this.siteName = siteName;
     }
-
-    @RequestMapping(method = RequestMethod.GET)
+    
+    @RequestMapping("/getDateTime")
     public ModelAndView datTime() {
        var now = LocalDateTime.now();
         var dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
