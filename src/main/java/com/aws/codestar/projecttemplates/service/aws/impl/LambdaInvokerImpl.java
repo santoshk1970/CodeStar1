@@ -34,11 +34,12 @@ public class LambdaInvokerImpl implements LambdaInvoker{
         InvokeResult invokeResult = null;
         String ans= "default";
         try {
-            AWSLambda awsLambda = AWSLambdaClientBuilder.standard()
-                    .withCredentials(new ProfileCredentialsProvider())
-                    .withRegion(Regions.US_EAST_1).build();
+           // AWSLambda awsLambda = AWSLambdaClientBuilder.standard()
+           //         .withCredentials(new ProfileCredentialsProvider())
+           //         .withRegion(Regions.US_EAST_1).build();
 
-            invokeResult = awsLambda.invoke(invokeRequest);
+        	AWSLambda awsLambda= AWSLambdaClientBuilder.standard().build();
+        	invokeResult = awsLambda.invoke(invokeRequest);
 
             ans = new String(invokeResult.getPayload().array(), StandardCharsets.UTF_8);
 
