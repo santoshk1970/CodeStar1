@@ -9,7 +9,7 @@ public class DataProtectorImpl implements DataProtector {
 
 	@Override
 	public String transform(String clearValue, String dataElementName, String userId) {
-		return clearValue.concat("transformed");
+		return clearValue.concat("transformed");//comment
 	}
 
 }
