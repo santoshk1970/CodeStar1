@@ -15,6 +15,9 @@ import java.util.HashMap;
 public class HelloWorldController {
 
     private final String siteName;
+    
+    @Autowired
+    private DataProtector dataProtector;
 
     public HelloWorldController(final String siteName) {
         this.siteName = siteName;
@@ -26,7 +29,7 @@ public class HelloWorldController {
         return mav;
     }
    
- @RequestMapping("/getDateTime")
+ @RequestMapping("/protect")
     public ModelAndView getDateTime() {
        var now = LocalDateTime.now();
         var dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -38,5 +41,12 @@ public class HelloWorldController {
         mav.addObject("date_time", date_time);
         return mav;
        // return new ModelAndView("showMessage", params);
+    }
+     @RequestMapping("/sensitive")
+    public ModelAndView sensitive() {
+         ModelAndView mav = new ModelAndView("sensitive");//comment
+        mav.addObject("siteName", this.siteName);
+        return mav;
+      
     }
 }
