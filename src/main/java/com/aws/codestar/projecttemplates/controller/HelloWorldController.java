@@ -32,7 +32,7 @@ public class HelloWorldController {
     }
     @RequestMapping(method=RequestMethod.GET, value="/sensitive")
     public ModelAndView sensitive() {
-         ModelAndView mav = new ModelAndView("protect");
+         ModelAndView mav = new ModelAndView("sensitive");
          mav.addObject("dataToBeProtected", new DataToBeProtected());
         return mav;
       
