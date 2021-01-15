@@ -46,7 +46,7 @@
           </a>
         <div class="text">
           <h1>Congratulations!</h1>
-          <h2>Your link just worked.</h2>
+          <h2>This is the result</h2>
           <h2>${date_time}</h2>
         </div>
       </div>
