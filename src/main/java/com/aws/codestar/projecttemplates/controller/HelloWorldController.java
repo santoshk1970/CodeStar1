@@ -33,7 +33,13 @@ public class HelloWorldController {
         mav.addObject("siteName", this.siteName);
         return mav;
     }
-   
+    @RequestMapping("/sensitive")
+    public ModelAndView sensitive() {
+         ModelAndView mav = new ModelAndView("sensitive");
+         mav.addObject("dataToBeProtected", new DataToBeProtected());
+        return mav;
+      
+    }
  @RequestMapping("/protect")
     public ModelAndView getDateTime() {
        var now = LocalDateTime.now();
