@@ -49,10 +49,27 @@
           <h2>You just updated again a Java Spring web application.</h2>
         </div>
       </div>
+      
       <div class="message">
       <a class="link" href="getDateTime">Get date and time</a>
       </div>
     </div>
+
+
+<form:form method="POST" 
+          action="getDateTime" modelAttribute="employee">
+             <table>
+                <tr>
+                    <td><form:label path="clearValue">Clear Value</form:label></td>
+                    <td><form:input path="clearValue"/></td>
+                </tr>
+                 <tr>
+                    <td><form:label path="dataElementName">Data Element name</form:label></td>
+                    <td><form:input path="clearValue"/></td>
+                </tr>
+                </table>
+  </form>
+
 
     <footer>
       <p class="footer-contents">Designed and developed with <a href="https://aws.amazon.com/careers/devtools-jobs/">♥</a> in Seattle.</p>
