@@ -16,8 +16,8 @@ public class HelloWorldController {
 
     private final String siteName;
     
-    @Autowired
-    private DataProtector dataProtector;
+   // @Autowired
+   // private DataProtector dataProtector;
 
     public HelloWorldController(final String siteName) {
         this.siteName = siteName;
