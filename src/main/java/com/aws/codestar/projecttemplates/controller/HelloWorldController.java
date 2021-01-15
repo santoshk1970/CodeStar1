@@ -1,6 +1,7 @@
 package com.aws.codestar.projecttemplates.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,6 +11,7 @@ import com.aws.codestar.projecttemplates.model.DataToBeProtected;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Basic Spring MVC controller that handles all GET requests.
@@ -45,11 +47,14 @@ public class HelloWorldController {
         return mav;
        // return new ModelAndView("showMessage", params);
     }
-     @RequestMapping("/sensitive")
-    public ModelAndView sensitive() {
-         ModelAndView mav = new ModelAndView("sensitive");
-         mav.addObject("dataToBeProtected", new DataToBeProtected());
-        return mav;
-      
+ 
+ @RequestMapping(method = RequestMethod.POST, value="/protect")
+ public ModelAndView processProtection(@ModelAttribute("dataToBeProtected") DataToBeProtected dataToBeProtected,
+         Map<String, Object> model) {
+ 
+	 ModelAndView mav = new ModelAndView("result");//comment
+     mav.addObject("date_time", dataToBeProtected.getClearValue());
+     return mav;
+    
     }
 }
