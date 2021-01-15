@@ -2,6 +2,8 @@ package com.aws.codestar.projecttemplates.service.aws.impl;
 
 import java.nio.charset.StandardCharsets;
 
+import org.springframework.stereotype.Component;
+
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.lambda.AWSLambda;
@@ -10,7 +12,7 @@ import com.amazonaws.services.lambda.model.InvokeRequest;
 import com.amazonaws.services.lambda.model.InvokeResult;
 import com.amazonaws.services.lambda.model.ServiceException;
 import com.aws.codestar.projecttemplates.service.aws.LambdaInvoker;
-
+@Component
 public class LambdaInvokerImpl implements LambdaInvoker{
 
 	@Override
