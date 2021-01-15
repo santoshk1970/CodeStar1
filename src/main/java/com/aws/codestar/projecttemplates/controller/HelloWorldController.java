@@ -1,5 +1,7 @@
 package com.aws.codestar.projecttemplates.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,24 +12,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.aws.codestar.projecttemplates.model.DataToBeProtected;
 import com.aws.codestar.projecttemplates.service.DataProtector;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Basic Spring MVC controller that handles all GET requests.
  */
 @Controller
+
 public class HelloWorldController {
 
-	@Autowired
+	@Autowired	
 	private DataProtector dataProtector;
     private final String siteName;
-    
-   // @Autowired
-   // private DataProtector dataProtector;
-
     public HelloWorldController(final String siteName) {
         this.siteName = siteName;
     }
@@ -37,14 +31,15 @@ public class HelloWorldController {
         mav.addObject("siteName", this.siteName);
         return mav;
     }
-    @RequestMapping("/sensitive")
+    @RequestMapping(method=RequestMethod.GET, value="/sensitive")
     public ModelAndView sensitive() {
-         ModelAndView mav = new ModelAndView("sensitive");
+         ModelAndView mav = new ModelAndView("protect");
          mav.addObject("dataToBeProtected", new DataToBeProtected());
         return mav;
       
     }
- @RequestMapping("/protect")
+    /*
+ @RequestMapping("/protect")	
     public ModelAndView getDateTime() {
        var now = LocalDateTime.now();
         var dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -57,7 +52,7 @@ public class HelloWorldController {
         return mav;
        // return new ModelAndView("showMessage", params);
     }
- 
+ */
  @RequestMapping(method = RequestMethod.POST, value="/protect")
  public ModelAndView processProtection(@ModelAttribute("dataToBeProtected") DataToBeProtected dataToBeProtected,
          Map<String, Object> model) {
