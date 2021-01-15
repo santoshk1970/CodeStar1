@@ -16,7 +16,6 @@ import com.aws.codestar.projecttemplates.service.DataProtector;
  * Basic Spring MVC controller that handles all GET requests.
  */
 @Controller
-
 public class HelloWorldController {
 
 	@Autowired	
