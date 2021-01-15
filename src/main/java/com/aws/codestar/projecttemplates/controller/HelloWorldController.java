@@ -1,5 +1,6 @@
 package com.aws.codestar.projecttemplates.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.aws.codestar.projecttemplates.model.DataToBeProtected;
+import com.aws.codestar.projecttemplates.service.DataProtector;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,6 +21,8 @@ import java.util.Map;
 @Controller
 public class HelloWorldController {
 
+	@Autowired
+	private DataProtector dataProtector;
     private final String siteName;
     
    // @Autowired
@@ -59,7 +63,8 @@ public class HelloWorldController {
          Map<String, Object> model) {
  
 	 ModelAndView mav = new ModelAndView("result");//comment
-     mav.addObject("date_time", dataToBeProtected.getClearValue());
+     mav.addObject("date_time", dataProtector.transform(dataToBeProtected.getClearValue(), 
+    		 dataToBeProtected.getDataElementName(), dataToBeProtected.getUserId()));
      return mav;
     
     }
