@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.aws.codestar.projecttemplates.model.DataToBeProtected;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -44,8 +47,8 @@ public class HelloWorldController {
     }
      @RequestMapping("/sensitive")
     public ModelAndView sensitive() {
-         ModelAndView mav = new ModelAndView("sensitive");//comment
-        mav.addObject("siteName", this.siteName);
+         ModelAndView mav = new ModelAndView("sensitive");
+         mav.addObject("dataToBeProtected", new DataToBeProtected());
         return mav;
       
     }

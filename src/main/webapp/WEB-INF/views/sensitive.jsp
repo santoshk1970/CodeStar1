@@ -6,7 +6,7 @@
 
    <body>
       <h2>Protect the data</h2>
-      <form:form method = "POST" action = "protect">
+      <form:form method = "POST" action = "protect" modelAttribute="dataToBeProtected">
          <table>
             <tr>
                <td><form:label path = "clearValue">Clear value</form:label></td>
