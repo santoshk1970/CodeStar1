@@ -14,7 +14,12 @@
             </tr>
             <tr>
                <td><form:label path = "dataElementName">Data element name</form:label></td>
-               <td><form:input path = "dataElementName" /></td>
+               <td>
+               		<form:select path = "dataElementName" >
+               			<form:option value = "NONE" label = "Select"/>
+               			<form:options items = "${dataElementsList}" />
+               		</form:select>
+               </td>
             </tr>
             <tr>
                <td><form:label path = "userId">userId</form:label></td>
