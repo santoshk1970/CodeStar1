@@ -21,7 +21,14 @@ public class LambdaInvokerImpl implements LambdaInvoker{
 		String message = "{\n"+"\"first_name\": \"Santosh\",\n"
 				+ "\"last_name\": \"Kulkarni\"\n"+
 			"}"; 
-			    
+			   
+		
+		String transformMessage="{\r\n"
+				+ "  \"transform\": {\r\n"
+				+ "    \"clearValue\": \"santosh\",\r\n"
+				+ "    \"dataElementName\": \"alpha\"\r\n"
+				+ "  }\r\n"
+				+ "}";
        // InvokeRequest invokeRequest = new InvokeRequest()
        //         .withFunctionName(functionName)
        //         .withPayload("{\n" +
@@ -30,7 +37,7 @@ public class LambdaInvokerImpl implements LambdaInvoker{
        //                 "}");
         InvokeRequest invokeRequest = new InvokeRequest()
                 .withFunctionName(functionName)
-                .withPayload(message);
+                .withPayload(transformMessage);
         InvokeResult invokeResult = null;
         String ans= "default";
         try {
