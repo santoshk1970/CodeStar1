@@ -1,4 +1,4 @@
-package com.aws.codestar.projecttemplates.service.aws.impl;
+package net.amznsantosh.transform.service.aws.impl;
 
 import java.nio.charset.StandardCharsets;
 
@@ -11,11 +11,12 @@ import com.amazonaws.services.lambda.AWSLambdaClientBuilder;
 import com.amazonaws.services.lambda.model.InvokeRequest;
 import com.amazonaws.services.lambda.model.InvokeResult;
 import com.amazonaws.services.lambda.model.ServiceException;
-import com.aws.codestar.projecttemplates.model.DataToBeProtected;
-import com.aws.codestar.projecttemplates.model.TransformEnvelope;
-import com.aws.codestar.projecttemplates.service.aws.LambdaInvoker;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import net.amznsantosh.transform.model.DataToBeProtected;
+import net.amznsantosh.transform.model.TransformEnvelope;
+import net.amznsantosh.transform.service.aws.LambdaInvoker;
 @Component
 public class LambdaInvokerImpl implements LambdaInvoker{
 

@@ -1,8 +1,8 @@
-package com.aws.codestar.projecttemplates;
+package net.amznsantosh.transform;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.aws.codestar.projecttemplates.configuration.MvcConfig;
+import net.amznsantosh.transform.configuration.MvcConfig;
 
 /**
  * Utility to initialize the Spring MVC HelloWorld application.

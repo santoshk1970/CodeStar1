@@ -1,4 +1,4 @@
-package com.aws.codestar.projecttemplates.configuration;
+package net.amznsantosh.transform.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -7,14 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-import com.aws.codestar.projecttemplates.controller.HelloWorldController;
+import net.amznsantosh.transform.controller.TransformAWSLambdaController;
 
 /**
  * Spring configuration for sample application.
  */
 @Configuration
-@ComponentScan({ "com.aws.codestar.projecttemplates.configuration", 
-	             "com.aws.codestar.projecttemplates.service"
+@ComponentScan({ "net.amznsantosh.transform.configuration", 
+	             "net.amznsantosh.transform.service"
 	           })
 @PropertySource("classpath:application.properties")
 public class ApplicationConfig {
@@ -26,8 +26,8 @@ public class ApplicationConfig {
     private String siteName;
 
     @Bean
-    public HelloWorldController helloWorld() {
-        return new HelloWorldController(this.siteName);
+    public TransformAWSLambdaController helloWorld() {
+        return new TransformAWSLambdaController(this.siteName);
     }
 
     /**

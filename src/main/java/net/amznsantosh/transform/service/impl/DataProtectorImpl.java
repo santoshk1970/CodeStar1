@@ -1,4 +1,4 @@
-package com.aws.codestar.projecttemplates.service.impl;
+package net.amznsantosh.transform.service.impl;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -7,13 +7,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.aws.codestar.projecttemplates.model.DataToBeProtected;
-import com.aws.codestar.projecttemplates.service.DataProtector;
-import com.aws.codestar.projecttemplates.service.aws.LambdaInvoker;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import net.amznsantosh.transform.model.DataToBeProtected;
+import net.amznsantosh.transform.service.DataProtector;
+import net.amznsantosh.transform.service.aws.LambdaInvoker;
 
 @Component
 public class DataProtectorImpl implements DataProtector {

@@ -1,4 +1,4 @@
-package com.aws.codestar.projecttemplates.model;
+package net.amznsantosh.transform.model;
 
 public class DataToBeProtected {
 private String clearValue;

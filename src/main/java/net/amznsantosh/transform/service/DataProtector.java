@@ -1,7 +1,8 @@
-package com.aws.codestar.projecttemplates.service;
+package net.amznsantosh.transform.service;
 
-import com.aws.codestar.projecttemplates.model.DataToBeProtected;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import net.amznsantosh.transform.model.DataToBeProtected;
 
 public interface DataProtector {
 public String transform(String clearValue, String dataElementName,String userId );

@@ -1,7 +1,8 @@
-package com.aws.codestar.projecttemplates.service.aws;
+package net.amznsantosh.transform.service.aws;
 
-import com.aws.codestar.projecttemplates.model.DataToBeProtected;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import net.amznsantosh.transform.model.DataToBeProtected;
 
 public interface LambdaInvoker {
 public String invokeTransformLambda();

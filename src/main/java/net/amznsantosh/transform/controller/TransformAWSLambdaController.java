@@ -1,4 +1,4 @@
-package com.aws.codestar.projecttemplates.controller;
+package net.amznsantosh.transform.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,20 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.aws.codestar.projecttemplates.model.DataToBeProtected;
-import com.aws.codestar.projecttemplates.service.DataProtector;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import net.amznsantosh.transform.model.DataToBeProtected;
+import net.amznsantosh.transform.service.DataProtector;
 
 /**
  * Basic Spring MVC controller that handles all GET requests.
  */
 @Controller
-public class HelloWorldController {
+public class TransformAWSLambdaController {
 
 	@Autowired	
 	private DataProtector dataProtector;
     private final String siteName;
-    public HelloWorldController(final String siteName) {
+    public TransformAWSLambdaController(final String siteName) {
         this.siteName = siteName;
     }
     @RequestMapping("/")
