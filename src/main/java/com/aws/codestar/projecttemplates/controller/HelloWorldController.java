@@ -1,5 +1,6 @@
 package com.aws.codestar.projecttemplates.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,14 @@ public class HelloWorldController {
          mav.addObject("dataToBeProtected", new DataToBeProtected());
         return mav;
       
+    }
+    @ModelAttribute("dataElementsList")
+    public Map<String, String> getCountryList() {
+       Map<String, String> dataElementsList = new HashMap<String, String>();
+       dataElementsList.put("alpha", "Alphanumeric");
+       dataElementsList.put("num", "Number");
+       dataElementsList.put("ssn", "Social security number");
+       return dataElementsList;
     }
     /*
  @RequestMapping("/protect")	
