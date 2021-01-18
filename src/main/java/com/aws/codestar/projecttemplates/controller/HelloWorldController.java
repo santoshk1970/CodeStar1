@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.aws.codestar.projecttemplates.model.DataToBeProtected;
 import com.aws.codestar.projecttemplates.service.DataProtector;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * Basic Spring MVC controller that handles all GET requests.
@@ -63,12 +64,10 @@ public class HelloWorldController {
  */
  @RequestMapping(method = RequestMethod.POST, value="/protect")
  public ModelAndView processProtection(@ModelAttribute("dataToBeProtected") DataToBeProtected dataToBeProtected,
-         Map<String, Object> model) {
- 
-	 ModelAndView mav = new ModelAndView("result");//comment
+         Map<String, Object> model) throws JsonProcessingException {
+ 	 ModelAndView mav = new ModelAndView("result");//comment
 	 mav.addObject("original_value", dataToBeProtected.getClearValue()); 
-     mav.addObject("transformed_value", dataProtector.transform(dataToBeProtected.getClearValue(), 
-    		 dataToBeProtected.getDataElementName(), dataToBeProtected.getUserId()));
+	 mav.addObject("transformed_value", dataProtector.transform(dataToBeProtected));
      return mav;
     
     }
