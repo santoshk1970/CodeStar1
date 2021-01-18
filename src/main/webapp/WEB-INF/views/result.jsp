@@ -41,24 +41,12 @@
       </header>
 
       <div class="message">
-          <a class="twitter-link" href="https://twitter.com/home/?status=I%20created%20a%20project%20with%20AWS%20CodeStar!%20%23AWS%20%23AWSCodeStar%20https%3A%2F%2Faws.amazon.com%2Fcodestar">
-              <img src="${tweetSvg}" alt="Tweet"/>
-          </a>
         <div class="text">
-          <h1>Congratulations!</h1>
           <h2>This is the result</h2>
           <h2>${date_time}</h2>
         </div>
       </div>
-      <div class="message">
-      <a class="link" href="">go back</a>
-      </div>
     </div>
-
-    <footer>
-      <p class="footer-contents">Designed and developed with <a href="https://aws.amazon.com/careers/devtools-jobs/">♥</a> in Seattle.</p>
-    </footer>
-
     <script src={$setBackgroundJs}"></script>
   </body>
 </html>
