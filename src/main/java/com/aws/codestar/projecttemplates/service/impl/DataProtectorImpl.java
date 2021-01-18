@@ -37,7 +37,7 @@ public class DataProtectorImpl implements DataProtector {
 			e.printStackTrace();
 		}
 		
-		return clearValue.concat("-X-"+returnValue);//comment
+		return returnValue;//comment
 	}
 
 }
