@@ -66,7 +66,8 @@ public class HelloWorldController {
          Map<String, Object> model) {
  
 	 ModelAndView mav = new ModelAndView("result");//comment
-     mav.addObject("date_time", dataProtector.transform(dataToBeProtected.getClearValue(), 
+	 mav.addObject("original_value", dataToBeProtected.getClearValue()); 
+     mav.addObject("transformed_value", dataProtector.transform(dataToBeProtected.getClearValue(), 
     		 dataToBeProtected.getDataElementName(), dataToBeProtected.getUserId()));
      return mav;
     
